@@ -1,16 +1,19 @@
 @font-face {
-    font-family: 'IqosSansBold';
-    src: url('https://alex-ilyov.github.io/IQOSSans-Bold.ttf') format('truetype');
+    font-family: 'IqosSans-Bold';
+    src: url('https://alex-ilyov.github.io/fonts/IQOSSans-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    color: red;
+}
+@font-face {
+    font-family: 'IqosSans-Light';
+    src: url('https://alex-ilyov.github.io/fonts/IqosSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'IqosSans-Regular';
+    src: url('https://alex-ilyov.github.io/fonts/IqosSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-body{
-    font-family: 'IqosSansBold', sans-serif;
-    color:red;
-}
-
-a{
-    text-decoration:none;
-}
