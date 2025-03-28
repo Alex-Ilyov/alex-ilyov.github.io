@@ -1,0 +1,65 @@
+function getBulgariaTimeDate(year, month, day, hours, minutes, seconds) {
+    return new Date(Date.UTC(year, month - 1, day, hours - 2, minutes, seconds));
+}
+
+function startCountdown() {
+    const targetDate = getBulgariaTimeDate(2025, 4, 12, 11, 35, 0).getTime();
+
+    const updateCountdown = () => {
+        const now = Date.now();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const daysElem = document.getElementById("days");
+        const hoursElem = document.getElementById("hours");
+        const minutesElem = document.getElementById("minutes");
+        const secondsElem = document.getElementById("seconds");
+
+        if (daysElem && hoursElem && minutesElem && secondsElem) {
+            daysElem.textContent = days.toString().padStart(2, '0');
+            hoursElem.textContent = hours.toString().padStart(2, '0');
+            minutesElem.textContent = minutes.toString().padStart(2, '0');
+            secondsElem.textContent = seconds.toString().padStart(2, '0');
+        }
+
+        if (distance < 0) {
+            clearInterval(countdown);
+            if (daysElem) daysElem.textContent = "00";
+            if (hoursElem) hoursElem.textContent = "00";
+            if (minutesElem) minutesElem.textContent = "00";
+            if (secondsElem) secondsElem.textContent = "00";
+
+            const frame = document.querySelector(".frame");
+            const tease = document.querySelector(".tease");
+
+            if (frame) {
+                frame.innerHTML = "<tr><td colspan='7' style='text-align:center;'>Новият IQOS ILUMA i е вече тук!</td></tr>";
+            }
+            if (tease) {
+                tease.innerHTML = "<a style='text-decoration:underline; text-decoration-color:#00d1d2; text-decoration-thickness:2px;' href='https://iqos-bg-next.stage.bylith.com/bg/news/22'>Купи сега!</a>";
+            }
+        }
+    };
+
+    updateCountdown(); // Run immediately
+    const countdown = setInterval(updateCountdown, 1000);
+}
+
+// Watch for the table being added to the page
+const observer = new MutationObserver(() => {
+    if (document.getElementById("days")) {
+        startCountdown();
+        observer.disconnect(); // Stop watching once the table is found
+    }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
+
+// If the table is already on the page, start the countdown immediately
+if (document.getElementById("days")) {
+    startCountdown();
+}
