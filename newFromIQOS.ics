@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IQOS//Event Invite//BG
+BEGIN:VEVENT
+UID:neshto-novo-ot-iqos-20250423@iqos.com
+DTSTAMP:20250401T090000Z
+DTSTART:20250423T063000Z
+DTEND:20250423T205900Z
+SUMMARY:Нещо ново от IQOS
+DESCRIPTION:Готов ли си за нови моменти на наслада? Моменти, които ти дават усещане за удоволствие?​
+LOCATION:https://bg.iqos.com/bg
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
