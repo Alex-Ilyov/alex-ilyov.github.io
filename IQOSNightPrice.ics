@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IQOS//Event Invite//BG
+BEGIN:VEVENT
+UID:noshtna-cena-ot-iqos-20250423@iqos.com
+DTSTAMP:20250401T090000Z
+DTSTART:20250423T063000Z
+DTEND:20250423T205900Z
+SUMMARY:Нощна цена само за 10 часа!
+DESCRIPTION:За покупка на IQOS ILUMA - Гранитнобежово. Валидна от 13.05, 22:00 ч. до 14.05, 08:00 ч. Нощната цена е валидна само при заплащане с карта.
+LOCATION:https://bg.iqos.com/bg
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
